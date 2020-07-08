@@ -18,6 +18,9 @@ public enum HTTPMethod: String {
 
 public enum Route: String {
     case movies = "discover/movie"
+    case token = "authentication/token/new"
+    case session = "authentication/session/new"
+    case account = "account"
 }
 
 struct Request {
@@ -30,7 +33,7 @@ struct Request {
     public static let baseImageURL = URL(string: "https://image.tmdb.org/t/p/w500")!
     
     static func configureRequest(from route: Route, with parameters: [String: Any], and method: HTTPMethod, contains body: Data?) throws -> URLRequest {
-        guard let url = URL(string: "https://api.themoviedb.org/4/\(route.rawValue)") else { fatalError("Error while unrapping url") }
+        guard let url = URL(string: "https://api.themoviedb.org/3/\(route.rawValue)") else { fatalError("Error while unrapping url") }
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10.0)
         request.httpMethod = method.rawValue
         request.httpBody = body
@@ -45,7 +48,7 @@ struct Request {
                 try Encoder.setHeaders(for: &request, with: headers)
             }
         } catch {
-            throw NetworkError.NetworkError.encodingFailed
+            throw NetworkError.encodingFailed
         }
     }
 }

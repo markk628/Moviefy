@@ -22,6 +22,10 @@
 		ABAB4F0F241A172E001E85CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAB4F0D241A172E001E85CA /* Main.storyboard */; };
 		ABAB4F11241A1732001E85CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABAB4F10241A1732001E85CA /* Assets.xcassets */; };
 		ABAB4F14241A1732001E85CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAB4F12241A1732001E85CA /* LaunchScreen.storyboard */; };
+		FE41A99D24B6322D00EB2A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41A99C24B6322D00EB2A6A /* LoginViewController.swift */; };
+		FE41A99F24B638A600EB2A6A /* AuthenticationTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41A99E24B638A600EB2A6A /* AuthenticationTokenResponse.swift */; };
+		FE41A9A124B638B800EB2A6A /* CreateSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41A9A024B638B800EB2A6A /* CreateSessionResponse.swift */; };
+		FE41A9A324B638BE00EB2A6A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41A9A224B638BE00EB2A6A /* Account.swift */; };
 		FE5D733C24B5799D00FD7429 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D733B24B5799D00FD7429 /* APIClient.swift */; };
 		FE5D733E24B579FF00FD7429 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D733D24B579FF00FD7429 /* Request.swift */; };
 		FE5D734024B57AAE00FD7429 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D733F24B57AAE00FD7429 /* NetworkError.swift */; };
@@ -60,6 +64,10 @@
 		ABAB4F10241A1732001E85CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABAB4F13241A1732001E85CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABAB4F15241A1732001E85CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE41A99C24B6322D00EB2A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FE41A99E24B638A600EB2A6A /* AuthenticationTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTokenResponse.swift; sourceTree = "<group>"; };
+		FE41A9A024B638B800EB2A6A /* CreateSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSessionResponse.swift; sourceTree = "<group>"; };
+		FE41A9A224B638BE00EB2A6A /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		FE5D733B24B5799D00FD7429 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FE5D733D24B579FF00FD7429 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FE5D733F24B57AAE00FD7429 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				ABAB4F0B241A172E001E85CA /* ViewController.swift */,
+				FE41A99C24B6322D00EB2A6A /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				AB9F580F243D6820006612A3 /* Movie.swift */,
+				FE41A99E24B638A600EB2A6A /* AuthenticationTokenResponse.swift */,
+				FE41A9A024B638B800EB2A6A /* CreateSessionResponse.swift */,
+				FE41A9A224B638BE00EB2A6A /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,8 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8D09F124B3937000EDBDC6 /* Networking.swift in Sources */,
+				FE41A9A124B638B800EB2A6A /* CreateSessionResponse.swift in Sources */,
 				AB9F5800243D62FF006612A3 /* TitleSection.swift in Sources */,
 				AB9F5803243D6327006612A3 /* TitleCell.swift in Sources */,
+				FE41A99D24B6322D00EB2A6A /* LoginViewController.swift in Sources */,
+				FE41A9A324B638BE00EB2A6A /* Account.swift in Sources */,
+				FE41A99F24B638A600EB2A6A /* AuthenticationTokenResponse.swift in Sources */,
 				FE5D733C24B5799D00FD7429 /* APIClient.swift in Sources */,
 				FE5D734224B57EDB00FD7429 /* Encoder.swift in Sources */,
 				FE5D733E24B579FF00FD7429 /* Request.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 public struct Encoder {
     
     static func encodeParameters(for urlRequest: inout URLRequest, with parameters: [String: Any]) throws {
-        guard let url = urlRequest.url else { throw NetworkError.NetworkError.missingURL }
+        guard let url = urlRequest.url else { throw NetworkError.missingURL }
         
         if var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false), !parameters.isEmpty {
             urlComponents.queryItems = [URLQueryItem]()
