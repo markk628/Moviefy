@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
             case let .success(session):
                 DispatchQueue.main.async {
                     print(session.userName)
-                    self.logInLabel.text = "Logged in as \(session.userName)"
+                    self.logInLabel.text = "Logged in as \(session.displayName)"
                 }
             case let .failure(error):
                 print(error)

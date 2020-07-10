@@ -90,28 +90,28 @@ struct APIClient {
     
     func getAccountInfo(sessionId: String, _ completion: @escaping (Result<Account>) -> Void) {
         do {
-            let request = try Request.configureRequest(from: .session, with: ["session_id": sessionId], and: .get, contains: nil)
+            let request = try Request.configureRequest(from: .account, with: ["session_id": sessionId], and: .get, contains: nil)
             session.dataTask(with: request) { (data, response, error) in
                 if let response = response as? HTTPURLResponse, let data = data {
-                    do {
-                        let resultObject = try JSONSerialization.jsonObject(with: data, options: [])
-                        DispatchQueue.main.async(execute: {
-                            print("Results from POST request:\n\(resultObject)")
-                        })
-                    } catch {
-                        DispatchQueue.main.async(execute: {
-                            print("Unable to parse JSON response")
-                        })
-                    }
-//                    let result = Response.handleResponse(for: response)
-//                    switch result {
-//                    case .success:
-//                        let result = try? JSONDecoder().decode(Account.self, from: data)
-//                        completion(Result.success(result!))
-//                        print(result)
-//                    case .failure:
-//                        completion(Result.failure(NetworkError.decodingFailed))
+//                    do {
+//                        let resultObject = try JSONSerialization.jsonObject(with: data, options: [])
+//                        DispatchQueue.main.async(execute: {
+//                            print("Results from POST request:\n\(resultObject)")
+//                        })
+//                    } catch {
+//                        DispatchQueue.main.async(execute: {
+//                            print("Unable to parse JSON response")
+//                        })
 //                    }
+                    let result = Response.handleResponse(for: response)
+                    switch result {
+                    case .success:
+                        let result = try? JSONDecoder().decode(Account.self, from: data)
+                        completion(Result.success(result!))
+                        print(result)
+                    case .failure:
+                        completion(Result.failure(NetworkError.decodingFailed))
+                    }
                 }
             }.resume()
         } catch {
